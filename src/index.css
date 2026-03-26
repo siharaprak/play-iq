@@ -1,0 +1,336 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PlayIQ Nebula HUD Design System */
+
+@layer base {
+  :root {
+    /* Core cosmic palette */
+    --background: 220 25% 6%;
+    --foreground: 190 100% 95%;
+
+    --card: 220 30% 8%;
+    --card-foreground: 190 100% 95%;
+
+    --popover: 220 30% 10%;
+    --popover-foreground: 190 100% 95%;
+
+    /* Primary: Cyan/Teal neon */
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 25% 6%;
+
+    /* Secondary: Magenta/Pink accent */
+    --secondary: 300 85% 55%;
+    --secondary-foreground: 220 25% 6%;
+
+    /* Muted: Deep space tones */
+    --muted: 220 30% 15%;
+    --muted-foreground: 200 20% 60%;
+
+    /* Accent: Electric blue */
+    --accent: 200 100% 60%;
+    --accent-foreground: 220 25% 6%;
+
+    /* Tertiary: Golden/Orange glow */
+    --tertiary: 45 100% 60%;
+    --tertiary-foreground: 220 25% 6%;
+
+    /* Destructive */
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success */
+    --success: 160 100% 45%;
+    --success-foreground: 220 25% 6%;
+
+    /* Borders and inputs */
+    --border: 200 60% 30%;
+    --input: 200 60% 25%;
+    --ring: 185 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Nebula HUD specific tokens */
+    --hud-glow: 185 100% 50%;
+    --hud-glow-secondary: 300 85% 55%;
+    --hud-glass: 200 40% 10%;
+    --hud-glass-border: 185 80% 40%;
+    --hud-neon-bright: 185 100% 70%;
+    --hud-corner-node: 185 100% 80%;
+    --hud-laser-underline: 185 100% 60%;
+    --hud-platform-glow: 270 100% 60%;
+    --hud-arc-electric: 200 100% 70%;
+    --hud-fog: 200 30% 50%;
+    --hud-scanline: 185 50% 50%;
+
+    /* Sidebar */
+    --sidebar-background: 220 30% 8%;
+    --sidebar-foreground: 190 100% 95%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 30% 15%;
+    --sidebar-accent-foreground: 190 100% 95%;
+    --sidebar-border: 200 60% 25%;
+    --sidebar-ring: 185 100% 50%;
+  }
+
+  .dark {
+    /* Same as root - designed dark-first */
+    --background: 220 25% 6%;
+    --foreground: 190 100% 95%;
+    --card: 220 30% 8%;
+    --card-foreground: 190 100% 95%;
+    --popover: 220 30% 10%;
+    --popover-foreground: 190 100% 95%;
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 25% 6%;
+    --secondary: 300 85% 55%;
+    --secondary-foreground: 220 25% 6%;
+    --muted: 220 30% 15%;
+    --muted-foreground: 200 20% 60%;
+    --accent: 200 100% 60%;
+    --accent-foreground: 220 25% 6%;
+    --tertiary: 45 100% 60%;
+    --tertiary-foreground: 220 25% 6%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 160 100% 45%;
+    --success-foreground: 220 25% 6%;
+    --border: 200 60% 30%;
+    --input: 200 60% 25%;
+    --ring: 185 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Force dark mode */
+  html {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  /* HUD Glow Effects */
+  .glow-primary {
+    box-shadow: 
+      0 0 10px hsl(var(--primary) / 0.5),
+      0 0 20px hsl(var(--primary) / 0.3),
+      0 0 40px hsl(var(--primary) / 0.1);
+  }
+
+  .glow-secondary {
+    box-shadow: 
+      0 0 10px hsl(var(--secondary) / 0.5),
+      0 0 20px hsl(var(--secondary) / 0.3),
+      0 0 40px hsl(var(--secondary) / 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 
+      0 0 10px hsl(var(--accent) / 0.5),
+      0 0 20px hsl(var(--accent) / 0.3);
+  }
+
+  .text-glow-primary {
+    text-shadow: 
+      0 0 10px hsl(var(--primary) / 0.8),
+      0 0 20px hsl(var(--primary) / 0.5),
+      0 0 40px hsl(var(--primary) / 0.3);
+  }
+
+  .text-glow-secondary {
+    text-shadow: 
+      0 0 10px hsl(var(--secondary) / 0.8),
+      0 0 20px hsl(var(--secondary) / 0.5);
+  }
+
+  /* Aerogel Glass Effect */
+  .glass-panel {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--hud-glass) / 0.8) 0%,
+      hsl(var(--hud-glass) / 0.4) 50%,
+      hsl(var(--hud-glass) / 0.6) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Neon Border Effect */
+  .neon-border {
+    border: 1px solid hsl(var(--hud-glass-border) / 0.6);
+    box-shadow: 
+      inset 0 1px 0 hsl(var(--hud-neon-bright) / 0.2),
+      0 0 15px hsl(var(--primary) / 0.3),
+      0 0 30px hsl(var(--primary) / 0.1);
+  }
+
+  /* Corner Nodes */
+  .corner-nodes::before,
+  .corner-nodes::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(var(--hud-corner-node));
+    box-shadow: 0 0 10px hsl(var(--primary));
+  }
+
+  .corner-nodes::before {
+    top: -4px;
+    left: -4px;
+  }
+
+  .corner-nodes::after {
+    top: -4px;
+    right: -4px;
+  }
+
+  /* Scanline Effect */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--hud-scanline) / 0.03) 2px,
+      hsl(var(--hud-scanline) / 0.03) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Laser Underline */
+  .laser-underline {
+    position: relative;
+  }
+
+  .laser-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--primary)) 20%,
+      hsl(var(--primary)) 80%,
+      transparent 100%
+    );
+    box-shadow: 0 0 10px hsl(var(--primary));
+  }
+
+  /* Hologram Base Disk */
+  .holo-base {
+    position: relative;
+  }
+
+  .holo-base::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: radial-gradient(
+      ellipse at center,
+      hsl(var(--primary) / 0.8) 0%,
+      hsl(var(--primary) / 0.4) 40%,
+      transparent 70%
+    );
+    filter: blur(2px);
+  }
+
+  /* Platform Fog */
+  .platform-fog::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    right: -20%;
+    height: 40px;
+    background: radial-gradient(
+      ellipse at center bottom,
+      hsl(var(--hud-fog) / 0.4) 0%,
+      transparent 70%
+    );
+    filter: blur(10px);
+    animation: fog-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes fog-pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+  }
+}
+
+/* Custom Animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5),
+                0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.7),
+                0 0 40px hsl(var(--primary) / 0.5),
+                0 0 60px hsl(var(--primary) / 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes electric-arc {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.1); }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+@keyframes trail-flow {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-electric {
+  animation: electric-arc 0.3s ease-in-out infinite;
+}

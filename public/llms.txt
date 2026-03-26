@@ -1,0 +1,57 @@
+# PlayIQ
+
+> PlayIQ creates STEM educational toys that inspire creativity and learning through hands-on magnetic building experiences.
+
+## About PlayIQ
+
+PlayIQ is an educational toy company specializing in magnetic building blocks for children ages 3+. Our flagship product is a 181-piece space-themed magnetic construction set designed to develop STEM skills, creativity, and fine motor abilities through screen-free play.
+
+## Products
+
+### PlayIQ 181-Piece Magnetic Building Blocks Set
+
+A complete STEM educational toy kit featuring:
+- 181 magnetic building pieces with galactic space prints
+- Glow-in-the-dark alien and astronaut figures
+- LED light-up characters for day-to-night play
+- Double-sided magnetic board for stability
+- Scene guidebook with 6 buildable designs
+- Storage box included
+
+**Key Features:**
+- Age range: 3+ years (designed for 3-7 year olds)
+- Safety: BPA-free, CE-certified, eco-friendly materials
+- Compatibility: Works with standard 2x2cm magnetic blocks
+- Educational focus: STEM, 3D thinking, geometry, fine motor skills
+
+**Purchase:** Available on Amazon at amazon.com/dp/B0F3LV725Z
+
+## Frequently Asked Questions
+
+**Q: What age is this toy for?**
+A: Designed for children ages 3 and up, with activities suitable for ages 3-7.
+
+**Q: Are the blocks safe?**
+A: Yes. Made with BPA-free, CE-certified materials with enclosed magnets and rounded edges.
+
+**Q: Are they compatible with other magnetic blocks?**
+A: Yes, fully compatible with other 2x2cm magnetic building blocks.
+
+**Q: What STEM skills does it teach?**
+A: Spatial reasoning, 3D thinking, geometry, problem-solving, and fine motor skills.
+
+**Q: Can I build all scenes in the guidebook with this set?**
+A: Yes, all 6 scenes can be built using only the included pieces.
+
+## Pages
+
+- Home: /home
+- Product Details: /product
+- FAQ: /faq
+- Blog: /blog
+- Contact: /contact
+
+## Contact
+
+Email: support@playiq.com
+Amazon Store: amazon.com/dp/B0F3LV725Z
